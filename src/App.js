@@ -1,25 +1,72 @@
-import logo from './logo.svg';
+import React from 'react';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form'
+import { Button } from 'react-bootstrap';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      theObjectOfTheCity: {},
+      iputForCitySearch: '',
+      showData: false
+    }
+  }
+
+  getLocation = async (e) => {
+
+    e.preventDefault();
+
+    await this.setState({
+      iputForCitySearch: e.target.search.value
+    })
+
+
+    let requestURL = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.iputForCitySearch}&format=json`;
+
+    let retrivedURL = await axios.get(requestURL)
+
+
+
+    this.setState({
+      theObjectOfTheCity: retrivedURL.data[0],
+      showData: true
+    })
+
+
+
+  }
+
+  render() {
+    return (
+      <div>
+        <>
+          <h2>City Explorer</h2>
+          <Form onSubmit={this.getLocation} >
+            <Form.Group  className="mb-3" controlId="formBasicPassword">
+              
+              <Form.Control type="text" name="search" placeholder="Enter Location" />
+            </Form.Group>
+           
+            <Button variant="primary" type="submit">
+              Explore!
+            </Button>
+             </Form>
+
+          {this.state.showData &&
+            <p>{this.state.iputForCitySearch} Lat:{this.state.theObjectOfTheCity.lat} /Lon:{this.state.theObjectOfTheCity.lon} </p>
+          }
+
+
+        </>
+      </div>
+    )
+  }
 }
 
 export default App;
