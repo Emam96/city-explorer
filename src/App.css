@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+body {
+
+  background-image: url(http://www.estidia.eu/wp-content/uploads/2018/04/Savin-NY-Website-Background-Web.jpg);
+  background-size: cover;
+
+
+}
+
+
 .main {
   /* border: solid tomato; */
   margin: 0 auto;
   width: 80%;
   text-align: center;
+ 
 }
 
 h1 {
@@ -10,6 +21,9 @@ h1 {
   font-size: 2pc;
   color: tomato;
   margin-top: 3rem;
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 0.3rem;
+  word-spacing: 1rem;
 }
 
 form {
@@ -39,11 +53,20 @@ button:active {
 }
 
 img {
-  box-shadow: 0px 4px 10px lightgray;
+  box-shadow: 0px 4px 10px hsla(0, 0%, 0%, 0.24);
   transition: 1s;
 }
 
 p {
   margin-top: 1rem;
   font-family: sans-serif;
+  color: white;
+}
+
+.pCon {
+/* border: tomato solid; */
+margin: 0 auto;
+
+width: fit-content;
+
 }

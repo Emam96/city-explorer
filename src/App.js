@@ -58,7 +58,7 @@ class App extends React.Component {
               rounded
             />
           )}
-
+<div className="pCon">
           {this.state.showData && (
             <p>
               {this.state.iputForCitySearch} &nbsp; &nbsp; Lat:
@@ -66,6 +66,7 @@ class App extends React.Component {
               {this.state.theObjectOfTheCity.lon}{" "}
             </p>
           )}
+          </div>
         </>
       </div>
     );
