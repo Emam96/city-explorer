@@ -61,8 +61,8 @@ class App extends React.Component {
 
           {this.state.showData && (
             <p>
-              {this.state.iputForCitySearch} Lat:
-              {this.state.theObjectOfTheCity.lat} /Lon:
+              {this.state.iputForCitySearch} &nbsp; &nbsp; Lat:
+              {this.state.theObjectOfTheCity.lat} &nbsp;  &nbsp; Lon:
               {this.state.theObjectOfTheCity.lon}{" "}
             </p>
           )}
