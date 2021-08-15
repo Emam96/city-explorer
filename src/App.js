@@ -35,9 +35,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="main">
         <>
-          <h2>City Explorer</h2>
+          <h1>City Explorer</h1>
           <Form onSubmit={this.getLocation}>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Control
@@ -53,17 +53,18 @@ class App extends React.Component {
           </Form>
 
           {this.state.showData && (
+            <Image
+              src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.theObjectOfTheCity.lat},${this.state.theObjectOfTheCity.lon}&zoom=11.5`}
+              rounded
+            />
+          )}
+
+          {this.state.showData && (
             <p>
               {this.state.iputForCitySearch} Lat:
               {this.state.theObjectOfTheCity.lat} /Lon:
               {this.state.theObjectOfTheCity.lon}{" "}
             </p>
-          )}
-          {this.state.showData && (
-            <Image
-              src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.theObjectOfTheCity.lat},${this.state.theObjectOfTheCity.lon}&zoom=11.5`}
-              rounded
-            />
           )}
         </>
       </div>

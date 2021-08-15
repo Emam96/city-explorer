@@ -1,35 +1,87 @@
-# Project Name
+# City Explorer
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Emam Shararah
+**Version**: 1.0.0 
+
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
-
+This web app can give you the coordination of a searched place and a picture of the place map, mainly cities. the problem domain was to help people identify places on click.
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+1. Write down a plan for the workflow.
+2. create a new React app.
+3. code the initial components. 
+4. pass the interchangeable data through state.
+5. search for an api that supports your project and retrieve data from it. 
+6. use the data through out you app using the state. 
+7. deploy the app using a server. 
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+I used React to structure the markdown and program, I used Netlify for hosting my app, used bootstrap fro CSS libraries. I used locationiq api for data.
+Of course I used VS code for editing and Github. 
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-
-## Credit and Collaborations
 
 
+15-8-2021:
+
+* Created a new repo and initialized it with my React app 2:45.
+* Added the first functionalities (lat-lon) 3:10.
+* added the map 4:00
+* deployed 
+ * Application now has a fully-functional express server, with a GET route for the location resource.
 
 
 
 
-Name of feature: ________________________________
+<hr>
 
-Estimate of time needed to complete: _____
 
-Start time: _____
 
-Finish time: _____
 
-Actual time needed to complete: _____
+
+
+Name of feature: Set up your React repository & API keys.
+
+Estimate of time needed to complete: 30 min
+
+Start time: 2:45
+
+Finish time: 3:00
+
+Actual time needed to complete: 15 min 
+
+
+
+&nbsp;
+
+
+Name of feature: Locations.
+
+Estimate of time needed to complete: 1.5 hour
+
+Start time: 3:00
+
+Finish time: 4:00
+
+Actual time needed to complete: 1 hour 
+
+
+
+&nbsp;
+
+
+Name of feature: Map.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 4:00
+
+Finish time: 4:30
+
+Actual time needed to complete: 30 min 
+
+
+
+
