@@ -34,12 +34,7 @@ class App extends React.Component {
     let retrivedURL = await axios.get(requestURL);
 
 
-    if (retrivedURL.status !== 200) {
-      this.setState({
-        Alert: `Website returned a code ${retrivedURL.status}`,
-      });
     
-    }
 
     let retrivedURL2 = await axios.get(requestURL2);
 
