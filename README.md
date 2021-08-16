@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Emam Shararah
-**Version**: 1.0.0 
+**Version**: 1.0.1 
 
 
 ## Overview
@@ -85,3 +85,45 @@ Actual time needed to complete: 30 min
 
 
 
+### day 2 
+
+
+&nbsp;
+
+
+Name of feature: Set up your server repository..
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 4:00
+
+Finish time: 7:00
+
+Actual time needed to complete: 3 hours  
+
+&nbsp;
+
+
+Name of feature: Weather (placeholder)..
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 7:00
+
+Finish time: 8:00
+
+Actual time needed to complete: 1 hour 
+
+
+&nbsp;
+
+
+Name of feature: Weather (placeholder)..
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 7:00
+
+Finish time: 8:00
+
+Actual time needed to complete: 1 hour 

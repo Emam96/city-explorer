@@ -70,3 +70,15 @@ margin: 0 auto;
 width: fit-content;
 
 }
+
+
+th, tr {
+  width: 50%%;
+  
+}
+
+
+th {
+/* border: tomato solid; */
+  color: whitesmoke;
+}
