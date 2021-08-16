@@ -33,15 +33,7 @@ class App extends React.Component {
 
     let retrivedURL = await axios.get(requestURL);
 
-
-    
-
     let retrivedURL2 = await axios.get(requestURL2);
-
-
-  
-
-
 
     // console.log(retrivedURL.data);
     console.dir(retrivedURL2.data);
@@ -50,7 +42,6 @@ class App extends React.Component {
       theObjectOfTheWeather: retrivedURL2.data,
       theObjectOfTheCity: retrivedURL.data[0],
       showData: true,
-      
     });
   };
 
@@ -60,13 +51,18 @@ class App extends React.Component {
         <>
           <h1>City Explorer</h1>
           <Form onSubmit={this.getLocation}>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Select name="search" aria-label="Default select example">
+              <option value="Paris">Paris</option>
+              <option value="Amman">Amman</option>
+              <option value="Seattle">Seattle</option>
+            </Form.Select>
+            {/* <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Control
                 type="text"
                 name="search"
                 placeholder="Enter Location"
               />
-            </Form.Group>
+            </Form.Group> */}
 
             <Button variant="primary" type="submit">
               Explore!
@@ -85,12 +81,9 @@ class App extends React.Component {
                 {this.state.iputForCitySearch} &nbsp; &nbsp; Lat:
                 {this.state.theObjectOfTheCity.lat} &nbsp; &nbsp; Lon:
                 {this.state.theObjectOfTheCity.lon}{" "}
-                
               </p>
             )}
           </div>
-
-          
 
           {this.state.showData &&
             this.state.theObjectOfTheWeather.data.map((item, i) => {
