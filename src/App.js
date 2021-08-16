@@ -96,7 +96,7 @@ class App extends React.Component {
             this.state.theObjectOfTheWeather.data.map((item, i) => {
               return (
                 <Table striped bordered hover>
-                  <tbody>
+                  <tbody key={i}>
                     <tr>
                       <th>Weather for Day {i}</th>
                       <th>description: {item.weather.description}</th>
