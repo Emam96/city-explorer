@@ -41,8 +41,9 @@ class App extends React.Component {
     let retrivedURL2 = await axios.get(requestURL2);
 
     let retrivedURL3 = await axios.get(requestURL3);
+    
 
-    console.dir(retrivedURL2.data);
+    console.dir(retrivedURL3.data);
 
     this.setState({
       theObjectOfTheWeather: retrivedURL2.data,

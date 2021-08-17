@@ -19,7 +19,7 @@ class Movie extends React.Component {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3 style={{color:"gold"}}>{this.props.title}</h3>
+          <h3 style={{color:"skyblue"}}>{this.props.title}</h3>
         </Carousel.Caption>
       </>
       
