@@ -1,19 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 body {
-
   background-image: url(http://www.estidia.eu/wp-content/uploads/2018/04/Savin-NY-Website-Background-Web.jpg);
   background-size: cover;
-
-
 }
-
 
 .main {
   /* border: solid tomato; */
   margin: 0 auto;
   width: 80%;
   text-align: center;
- 
 }
 
 h1 {
@@ -21,7 +16,7 @@ h1 {
   font-size: 2pc;
   color: tomato;
   margin-top: 3rem;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   letter-spacing: 0.3rem;
   word-spacing: 1rem;
 }
@@ -60,25 +55,60 @@ img {
 p {
   margin-top: 1rem;
   font-family: sans-serif;
-  color: white;
+  color: rgb(19, 20, 18);
+}
+
+
+
+
+.tab {
+/* border:solid tomato; */
+height: 500px;
+width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+ 
+}
+
+
+th,
+tr {
+  width: 50%%;
+ 
+}
+
+th {
+  /* border: tomato solid; */
+  color: rgb(19, 20, 18);
+}
+
+
+.carousel {
+
+color: tomato;
+/* border: solid tomato; */
+/* margin: 3rem auto; */
+float: left;
+width: 500px;
+box-shadow: 0px 4px 10px hsla(0, 0%, 0%, 0.24);
+
+}
+
+
+.imgto {
+  /* border: tomato solid; */
+width: fit-content;
+height: fit-content;
+  float: right;
+  padding: 3rem;
 }
 
 .pCon {
-/* border: tomato solid; */
-margin: 0 auto;
-
-width: fit-content;
-
-}
-
-
-th, tr {
-  width: 50%%;
-  
-}
-
-
-th {
-/* border: tomato solid; */
-  color: whitesmoke;
+  /* border: tomato solid; */
+  right: 0;
+ 
+  width: fit-content;
 }

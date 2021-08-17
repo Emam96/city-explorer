@@ -4,8 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
 import { Button } from "react-bootstrap";
-import { Table } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import "./App.css";
+import Weather from "./components/weather";
+import Movie from "./components/movie";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class App extends React.Component {
     this.state = {
       theObjectOfTheCity: {},
       theObjectOfTheWeather: [],
+      theObjectOfTheMovie: [],
       iputForCitySearch: "",
       showData: false,
       showPic: false,
@@ -29,17 +32,21 @@ class App extends React.Component {
 
     let requestURL = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.iputForCitySearch}&format=json`;
 
-    let requestURL2 = `${process.env.REACT_APP_SERVER_LINK}/getData?cityName=${this.state.iputForCitySearch}`;
+    let requestURL2 = `${process.env.REACT_APP_SERVER_LINK}/forecast?searchQuery=${this.state.iputForCitySearch}`;
+
+    let requestURL3 = `${process.env.REACT_APP_SERVER_LINK}/movie?searchQuery=${this.state.iputForCitySearch}`;
 
     let retrivedURL = await axios.get(requestURL);
 
     let retrivedURL2 = await axios.get(requestURL2);
 
-    // console.log(retrivedURL.data);
+    let retrivedURL3 = await axios.get(requestURL3);
+
     console.dir(retrivedURL2.data);
 
     this.setState({
       theObjectOfTheWeather: retrivedURL2.data,
+      theObjectOfTheMovie: retrivedURL3.data,
       theObjectOfTheCity: retrivedURL.data[0],
       showData: true,
     });
@@ -56,25 +63,35 @@ class App extends React.Component {
               <option value="Amman">Amman</option>
               <option value="Seattle">Seattle</option>
             </Form.Select>
-            {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control
-                type="text"
-                name="search"
-                placeholder="Enter Location"
-              />
-            </Form.Group> */}
 
             <Button variant="primary" type="submit">
               Explore!
             </Button>
           </Form>
+          <div className="tab2">
+            <Carousel>
+              {this.state.showData &&
+                this.state.theObjectOfTheMovie.map((item, i) => {
+                  return (
+                    <Carousel.Item>
+                      <Movie key={i} title={item.title} poster={item.poster} />
+                    </Carousel.Item>
+                  );
+                })}
+            </Carousel>
+          </div>
 
+
+
+
+<div className="imgto">
           {this.state.showData && (
             <Image
               src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.theObjectOfTheCity.lat},${this.state.theObjectOfTheCity.lon}&zoom=11.5`}
               rounded
             />
           )}
+         
           <div className="pCon">
             {this.state.showData && (
               <p>
@@ -84,22 +101,20 @@ class App extends React.Component {
               </p>
             )}
           </div>
-
-          {this.state.showData &&
-            this.state.theObjectOfTheWeather.data.map((item, i) => {
-              return (
-                <Table striped bordered hover>
-                  <tbody key={i}>
-                    <tr>
-                      <th>Date: {item.valid_date}</th>
-                      <th>description: {item.weather.description}</th>
-                      <th>H: {item.app_max_temp}</th>
-                      <th>L: {item.app_min_temp}</th>
-                    </tr>
-                  </tbody>
-                </Table>
-              );
-            })}
+          </div>
+          <div className="tab">
+            {this.state.showData &&
+              this.state.theObjectOfTheWeather.map((item, i) => {
+                return (
+                  <Weather
+                    key={i}
+                    date={item.date}
+                    description={item.description}
+                  />
+                );
+              })}
+          </div>
+          
         </>
       </div>
     );
