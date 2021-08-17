@@ -91,7 +91,7 @@ class App extends React.Component {
                 <Table striped bordered hover>
                   <tbody key={i}>
                     <tr>
-                      <th>Weather for Day {i}</th>
+                      <th>Date: {item.valid_date}</th>
                       <th>description: {item.weather.description}</th>
                       <th>H: {item.app_max_temp}</th>
                       <th>L: {item.app_min_temp}</th>
