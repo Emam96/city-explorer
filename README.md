@@ -127,3 +127,46 @@ Start time: 7:00
 Finish time: 8:00
 
 Actual time needed to complete: 1 hour 
+
+
+## day 3 
+
+
+&nbsp;
+
+
+Name of feature:  Weather (live)
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 3:00
+
+Finish time: 4:00
+
+Actual time needed to complete: 1 hour 
+
+&nbsp;
+
+
+Name of feature: Movies
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 4:00
+
+Finish time: 5:30
+
+Actual time needed to complete: 1.5 hour 
+
+&nbsp;
+
+
+Name of feature: Publish
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 6:00
+
+Finish time: 6:30
+
+Actual time needed to complete: 0.5 hour 
