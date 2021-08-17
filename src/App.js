@@ -63,45 +63,49 @@ class App extends React.Component {
               <option value="Amman">Amman</option>
               <option value="Seattle">Seattle</option>
             </Form.Select>
-
             <Button variant="primary" type="submit">
               Explore!
             </Button>
           </Form>
-          <div className="tab2">
-            <Carousel>
-              {this.state.showData &&
-                this.state.theObjectOfTheMovie.map((item, i) => {
-                  return (
-                    <Carousel.Item>
-                      <Movie key={i} title={item.title} poster={item.poster} />
-                    </Carousel.Item>
-                  );
-                })}
-            </Carousel>
+          {/* /////////////////////////////////////////////////////////////////// */}
+          <div className="imgto">
+            
+            <div className="tab2">
+              <Carousel>
+                {this.state.showData &&
+                  this.state.theObjectOfTheMovie.map((item, i) => {
+                    return (
+                      <Carousel.Item>
+                        <Movie
+                          key={i}
+                          title={item.title}
+                          poster={item.poster}
+                        />
+                      </Carousel.Item>
+                    );
+                  })}
+              </Carousel>
+              </div>
+
+
+              <div className="pCon">
+              {this.state.showData && (
+                <Image
+                  src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.theObjectOfTheCity.lat},${this.state.theObjectOfTheCity.lon}&zoom=11.5`}
+                  rounded
+                />
+              )}
+                {this.state.showData && (
+                  <p>
+                    {this.state.iputForCitySearch} &nbsp; &nbsp; Lat:
+                    {this.state.theObjectOfTheCity.lat} &nbsp; &nbsp; Lon:
+                    {this.state.theObjectOfTheCity.lon}{" "}
+                  </p>
+                )}
+              </div>
+           
           </div>
 
-
-
-
-<div className="imgto">
-          {this.state.showData && (
-            <Image
-              src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.theObjectOfTheCity.lat},${this.state.theObjectOfTheCity.lon}&zoom=11.5`}
-              rounded
-            />
-          )}
-         
-          <div className="pCon">
-            {this.state.showData && (
-              <p>
-                {this.state.iputForCitySearch} &nbsp; &nbsp; Lat:
-                {this.state.theObjectOfTheCity.lat} &nbsp; &nbsp; Lon:
-                {this.state.theObjectOfTheCity.lon}{" "}
-              </p>
-            )}
-          </div>
-          </div>
           <div className="tab">
             {this.state.showData &&
               this.state.theObjectOfTheWeather.map((item, i) => {
@@ -114,7 +118,6 @@ class App extends React.Component {
                 );
               })}
           </div>
-          
         </>
       </div>
     );

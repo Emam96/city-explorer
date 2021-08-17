@@ -12,6 +12,7 @@ class Weather extends React.Component {
         
              
              <Table striped bordered hover>
+              
                 <tbody > 
                   <tr key={this.props.key}>
                     <th>Date: {this.props.date}</th>
