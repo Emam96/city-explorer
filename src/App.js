@@ -41,13 +41,22 @@ class App extends React.Component {
     let retrivedURL2 = await axios.get(requestURL2);
 
     let retrivedURL3 = await axios.get(requestURL3);
-    
+
+let proDataForSplice = retrivedURL3.data;
+
+for (let index = 0; index < proDataForSplice.length; index++) {
+  if (proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//cJy32F0ZCgKrLeamdx4IrAWXJFa.jpg" ) {    //  THIS CODE IS TO CLEAN THE MOVIE LIST FROM ADULT CONTENT, MY GODNESS
+     
+    proDataForSplice.splice(index, 1);
+  }
+  
+}
 
     console.dir(retrivedURL3.data);
 
     this.setState({
       theObjectOfTheWeather: retrivedURL2.data,
-      theObjectOfTheMovie: retrivedURL3.data,
+      theObjectOfTheMovie: proDataForSplice,
       theObjectOfTheCity: retrivedURL.data[0],
       showData: true,
     });
