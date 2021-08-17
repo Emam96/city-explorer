@@ -45,7 +45,7 @@ class App extends React.Component {
 let proDataForSplice = retrivedURL3.data;
 
 for (let index = 0; index < proDataForSplice.length; index++) {
-  if (proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//cJy32F0ZCgKrLeamdx4IrAWXJFa.jpg" ) {    //  THIS CODE IS TO CLEAN THE MOVIE LIST FROM ADULT CONTENT, MY GODNESS
+  if (proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//cJy32F0ZCgKrLeamdx4IrAWXJFa.jpg" || proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//1NUOprbP7LLfKPArLJY7wziUiHT.jpg"  || proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//6tn0pNVvTfFTREKOfixksU8QCSV.jpg") {    //  THIS CODE IS TO CLEAN THE MOVIE LIST FROM ADULT CONTENT, MY GODNESS
      
     proDataForSplice.splice(index, 1);
   }
