@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Emam Shararah
-**Version**: 1.0.3
+**Version**: 1.0.4
 
 ## Overview
 
@@ -37,6 +37,14 @@ Of course I used VS code for editing and Github.
 * added a live weather forecast through a third API service
 * added a movie search API
 * Deployed once again with the latest updates
+
+18-8-2021: 
+
+* Refactored the API functions 
+* Refactored the app components  
+* Deployed once again with the latest updates
+
+
 
 <hr>
 
@@ -149,3 +157,31 @@ Start time: 6:00
 Finish time: 6:30
 
 Actual time needed to complete: 0.5 hour
+
+
+## day 4
+
+&nbsp;
+
+Name of feature:  Refactor (backend)
+
+Estimate of time needed to complete: 30min 
+
+Start time: 1:00
+
+Finish time: 1:30
+
+Actual time needed to complete: 30min
+
+&nbsp;
+
+Name of feature: Refactor (frontend)
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 2:00
+
+Finish time: 3:00
+
+Actual time needed to complete: 1 hour
+
