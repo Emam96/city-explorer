@@ -16,7 +16,7 @@ class Movie extends React.Component {
         <img
           className="d-block w-100"
           src={this.props.poster}
-          alt="First slide"
+          alt={this.props.title}
         />
         <Carousel.Caption>
           <h3 style={{color:"skyblue"}}>{this.props.title}</h3>
