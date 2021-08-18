@@ -80,6 +80,8 @@ for (let index = 0; index < proDataForSplice.length; index++) {
           {/* /////////////////////////////////////////////////////////////////// */}
           <div className="imgto">
             
+         
+
             <div className="tab2">
               <Carousel>
                 {this.state.showData &&
@@ -90,6 +92,7 @@ for (let index = 0; index < proDataForSplice.length; index++) {
                           key={i}
                           title={item.title}
                           poster={item.poster}
+                          state={this.state}
                         />
                       </Carousel.Item>
                     );

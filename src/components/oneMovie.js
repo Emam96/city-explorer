@@ -1,26 +1,27 @@
 import React from "react";
-// import { Carousel } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import OneMovie from "./oneMovie";
+class SingleMovie extends React.Component {
+   
+      
 
-class Movie extends React.Component {
   render() {
     return (
+        
       <>
-        {/* <img
+        <img
           className="d-block w-100"
           src={this.props.poster}
           alt={this.props.title}
         />
         <Carousel.Caption>
           <h3 style={{color:"skyblue"}}>{this.props.title}</h3>
-        </Carousel.Caption> */}
-
-        <OneMovie  title={this.props.title} poster={this.props.poster} />
+        </Carousel.Caption>
       </>
+      
     );
   }
 }
 
-export default Movie;
+export default SingleMovie;
