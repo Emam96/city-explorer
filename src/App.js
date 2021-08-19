@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
 import { Button } from "react-bootstrap";
-import { Carousel, FloatingLabel } from "react-bootstrap";
+import { Carousel, FloatingLabel, Card } from "react-bootstrap";
 
 import "./App.css";
 import Weather from "./components/weather";
@@ -95,23 +95,7 @@ class App extends React.Component {
           </Form>
           {/* /////////////////////////////////////////////////////////////////// */}
           <div className="imgto">
-            <div className="tab2">
-              <Carousel>
-                {this.state.showData &&
-                  this.state.theObjectOfTheMovie.map((item, i) => {
-                    return (
-                      <Carousel.Item>
-                        <Movie
-                          key={i}
-                          title={item.title}
-                          poster={item.poster}
-                          state={this.state}
-                        />
-                      </Carousel.Item>
-                    );
-                  })}
-              </Carousel>
-            </div>
+            
 
             <div className="pCon">
               {this.state.showData && (
@@ -128,6 +112,27 @@ class App extends React.Component {
                 </p>
               )}
             </div>
+
+
+
+            <div className="tab2">
+              {this.state.showData &&
+                this.state.theObjectOfTheMovie.map((item, i) => {
+                  return (
+                    <Card style={{ width: "18rem" }}>
+                      <Movie
+                        key={i}
+                        title={item.title}
+                        poster={item.poster}
+                        state={this.state}
+                      />
+                    </Card>
+                  );
+                })}
+            </div>
+
+
+
           </div>
 
           <div className="tab">

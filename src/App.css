@@ -31,19 +31,19 @@ form {
   margin: 2rem auto;
 }
 
-.form-select {
-  width: 66vh;
+.form-control {
+  /* border: solid tomato; */
+
+width: 150%;
+
 }
 
 .btn {
-
-height: 57px;
-
+  height: 57px;
 }
 
 .btn {
   transition: 0.2s;
-  
 }
 
 .btn:hover {
@@ -66,13 +66,29 @@ p {
 }
 
 .tab {
-  
   height: 500px;
   width: 98%;
   overflow: auto;
   display: flex;
   flex-direction: column;
   margin: 5rem auto;
+}
+
+.tab2 {
+
+/* border: tomato solid; */
+margin: 0rem auto;
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+
+}
+
+.card {
+
+margin-top: 2rem;
+box-shadow: 0px 4px 10px hsla(0, 0%, 0%, 0.24);
 }
 
 th,
@@ -91,17 +107,20 @@ th {
 }
 
 .imgto {
+    /* border: tomato solid; */
+
   width: 100%;
-  margin-top: 5rem;
+  margin: 5rem auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
 
 
-.mb-3 {
-width: 80%;
 
-  /* border: tomato solid; */
+.pCon  {
+ /* border: tomato solid; */
+ margin: 0rem auto;
+
 }
