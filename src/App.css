@@ -27,7 +27,7 @@ form {
   /* border: solid tomato; */
   width: 50%;
   justify-content: space-evenly;
-  align-items: baseline;
+  align-items: flex-start;
   margin: 2rem auto;
 }
 
@@ -35,15 +35,22 @@ form {
   width: 66vh;
 }
 
-button {
-  transition: 1s;
+.btn {
+
+height: 57px;
+
 }
 
-button:hover {
+.btn {
+  transition: 0.2s;
+  
+}
+
+.btn:hover {
   transform: scale(110%);
 }
 
-button:active {
+.btn:active {
   transform: scale(100%);
 }
 
@@ -90,4 +97,11 @@ th {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
+}
+
+
+.mb-3 {
+width: 80%;
+
+  /* border: tomato solid; */
 }

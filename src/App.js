@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
 import { Button } from "react-bootstrap";
-import { Carousel } from "react-bootstrap";
+import { Carousel, FloatingLabel } from "react-bootstrap";
+
 import "./App.css";
 import Weather from "./components/weather";
 import Movie from "./components/movie";
@@ -42,15 +43,22 @@ class App extends React.Component {
 
     let retrivedURL3 = await axios.get(requestURL3);
 
-let proDataForSplice = retrivedURL3.data;
+    let proDataForSplice = retrivedURL3.data;
 
-for (let index = 0; index < proDataForSplice.length; index++) {
-  if (proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//cJy32F0ZCgKrLeamdx4IrAWXJFa.jpg" || proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//1NUOprbP7LLfKPArLJY7wziUiHT.jpg"  || proDataForSplice[index].poster === "https://image.tmdb.org/t/p/original//6tn0pNVvTfFTREKOfixksU8QCSV.jpg") {    //  THIS CODE IS TO CLEAN THE MOVIE LIST FROM ADULT CONTENT, MY GODNESS
-     
-    proDataForSplice.splice(index, 1);
-  }
-  
-}
+    for (let index = 0; index < proDataForSplice.length; index++) {
+      if (
+        proDataForSplice[index].poster ===
+          "https://image.tmdb.org/t/p/original//cJy32F0ZCgKrLeamdx4IrAWXJFa.jpg" ||
+        proDataForSplice[index].poster ===
+          "https://image.tmdb.org/t/p/original//1NUOprbP7LLfKPArLJY7wziUiHT.jpg" ||
+        proDataForSplice[index].poster ===
+          "https://image.tmdb.org/t/p/original//6tn0pNVvTfFTREKOfixksU8QCSV.jpg"
+      ) {
+        //  THIS CODE IS TO CLEAN THE MOVIE LIST FROM ADULT CONTENT, MY GODNESS
+
+        proDataForSplice.splice(index, 1);
+      }
+    }
 
     console.dir(retrivedURL3.data);
 
@@ -68,20 +76,25 @@ for (let index = 0; index < proDataForSplice.length; index++) {
         <>
           <h1>City Explorer</h1>
           <Form onSubmit={this.getLocation}>
-            <Form.Select name="search" aria-label="Default select example">
+            {/* <Form.Select name="search" aria-label="Default select example">
               <option value="Paris">Paris</option>
               <option value="Amman">Amman</option>
               <option value="Seattle">Seattle</option>
-            </Form.Select>
+            </Form.Select> */}
+
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Enter Location"
+              className="mb-3"
+            >
+              <Form.Control type="text" name="search" />
+            </FloatingLabel>
             <Button variant="primary" type="submit">
               Explore!
             </Button>
           </Form>
           {/* /////////////////////////////////////////////////////////////////// */}
           <div className="imgto">
-            
-         
-
             <div className="tab2">
               <Carousel>
                 {this.state.showData &&
@@ -98,25 +111,23 @@ for (let index = 0; index < proDataForSplice.length; index++) {
                     );
                   })}
               </Carousel>
-              </div>
+            </div>
 
-
-              <div className="pCon">
+            <div className="pCon">
               {this.state.showData && (
                 <Image
                   src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.theObjectOfTheCity.lat},${this.state.theObjectOfTheCity.lon}&zoom=11.5`}
                   rounded
                 />
               )}
-                {this.state.showData && (
-                  <p>
-                    {this.state.iputForCitySearch} &nbsp; &nbsp; Lat:
-                    {this.state.theObjectOfTheCity.lat} &nbsp; &nbsp; Lon:
-                    {this.state.theObjectOfTheCity.lon}{" "}
-                  </p>
-                )}
-              </div>
-           
+              {this.state.showData && (
+                <p>
+                  {this.state.iputForCitySearch} &nbsp; &nbsp; Lat:
+                  {this.state.theObjectOfTheCity.lat} &nbsp; &nbsp; Lon:
+                  {this.state.theObjectOfTheCity.lon}{" "}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="tab">
